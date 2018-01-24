@@ -12,11 +12,30 @@ const optUSD = document.querySelector("#optUSD");
 //Other variables
 let usdRate = 0.0483675;
 
+/////////////////////////////////
+// MY FUNCTIONS
+/////////////////////////////////
+
+//Reseting the select box
+const resetSelectElement = selectItem => {
+	selectItem.selectedIndex = 0;
+};
+
 //Function for changing options
-function changeOptions(opt1, opt2) {
+const changeOptions = (opt1, opt2) => {
 	opt1.classList.add("selected");
 	opt2.classList.remove("selected");
-}
+};
+
+//Making the popup disappear
+const popupGone = () => {
+	popup.style.display = "none";
+};
+
+//Reseting the select box on refresh
+window.addEventListener("load", () => {
+	resetSelectElement(currOption);
+});
 
 optUSD.addEventListener("click", () => {
 	changeOptions(optUSD, optCZK);
@@ -44,8 +63,3 @@ button.addEventListener("click", e => {
 
 	e.preventDefault();
 });
-
-//Making the popup disappear
-const popupGone = () => {
-	popup.style.display = "none";
-};
