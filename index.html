@@ -23,8 +23,15 @@
         <div id="popup"></div>
         <form action="">
           <div class="form-group">
-            <label for="CZK">CZK</label>
-            <input class="form-control" type="number" id="czk" placeholder="CZK">
+            <label for="currOption">Currency</label>
+            <select id="currOption" class="form-control">
+              <option id="optCZK" class="selected">CZK -> USD</option>
+              <option id="optUSD">USD -> CZK</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="CZK">Amount</label>
+            <input class="form-control" type="number" id="czk" placeholder="Insert amount">
           </div>
           <!-- <div class="form-group">
             <label for="USD">USD</label>
